@@ -9,13 +9,19 @@ This project implements a custom Artisan command to import products from CSV or 
 ---
 
 ## 🛠 Available Command
+To spin up the project, simple run 
 
+```
+docker-compose up -d
+```
+This will start both services (MYSQL, LARAVEL APP).
+# After start up, 
+wait a few seconds for the database to finish initializing and run migrations. Then, run the migrations from insde the container if necessary
+```
+docker exec -it laravel-app php artisan app:product-import --type=${WHATEVER FORMAT YOU HAVE}
+```
+or if you want to run it from your local machine run but you need to set localhost at your DB_HOST var
 ```bash
 php artisan app:product-import --type=csv --test
 ```
 
-we still need to implement a bd on docker to be allowed using the following command to run the project
-```bash
-docker run --name laravel-db -e MYSQL_ROOT_PASSWORD=secret \
-  -e MYSQL_DATABASE=laravel -p 3306:3306 -d mysql:8
-```

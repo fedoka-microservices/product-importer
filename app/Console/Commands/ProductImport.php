@@ -23,7 +23,13 @@ class ProductImport extends Command
      * @var string
      */
     protected $description = 'This command gets the product data from a file';
+    private ProductService $productService;
+    public function __construct(ProductService $productService)
+    {
+        parent::__construct();
+        $this->productService = $productService;
 
+    }
     /**
      * Execute the console command.
      */
@@ -49,22 +55,22 @@ class ProductImport extends Command
                 $this->error("No data found in the file.");
                 return;
             }
-            $productService = new ProductService();
-            $productService->deleteAllProducts();
+
+            $this->productService->deleteAllProducts();
             foreach($result as $productData) {
-                $validProducts  = $productService->validateProducts($productData);
+                $validProducts  = $this->productService->validateProducts($productData);
                 if (!$validProducts) {
                     $this->error("Invalid product data: " . json_encode($productData, JSON_PRETTY_PRINT));
                     continue;
                 }
 
-                $product  = $productService->map($validProducts);
+                $product  = $this->productService->map($validProducts);
                 if ($isTest) {
                     $this->info("TEST MODE: Product data is valid and ready to be saved.");
                     $this->info("Product Data: " . json_encode($validProducts, JSON_PRETTY_PRINT));
                     continue;
                 }
-                $productService->saveProduct($product);
+                $this->productService->saveProduct($product);
                 $this->info("Product saved successfully: " . $product->name);
             }
 
