@@ -1,0 +1,41 @@
+[{
+        "Product Code": "P0001",
+        "Product Name": "TV",
+        "Product Description": "32\" Tv",
+        "Stock": 10,
+        "Cost in GBP": 399.99,
+        "Discontinued": ""
+    },
+    {
+        "Product Code": "P0002",
+        "Product Name": "Cd Player",
+        "Product Description": "Nice CD player",
+        "Stock": 11,
+        "Cost in GBP": 50.12,
+        "Discontinued": "yes"
+    },
+    {
+        "Product Code": "P0003",
+        "Product Name": "VCR",
+        "Product Description": "Top notch VCR",
+        "Stock": 12,
+        "Cost in GBP": 39.33,
+        "Discontinued": "yes"
+    },
+    {
+        "Product Code": "P0004",
+        "Product Name": "Bluray Player",
+        "Product Description": "Watch it in HD",
+        "Stock": 1,
+        "Cost in GBP": 24.55,
+        "Discontinued": ""
+    },
+    {
+        "Product Code": "P0005",
+        "Product Name": "XBOX360",
+        "Product Description": "Best.console.ever",
+        "Stock": 5,
+        "Cost in GBP": 30.44,
+        "Discontinued": ""
+    }
+]
