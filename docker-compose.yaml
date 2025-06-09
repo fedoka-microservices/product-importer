@@ -1,18 +1,18 @@
 version: '3.8'
 services:
-  product-database:
-    image: mysql:8.0.42
-    container_name: product-database
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-    volumes:
-      - mysql-data:/var/lib/mysql
-    ports:
-      - "${DB_PORT}:3306"
-    networks:
-      - product-network
+  # product-database:
+  #   image: mysql:8.0.42
+  #   container_name: product-database
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+  #     MYSQL_DATABASE: ${DB_DATABASE}
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+  #   ports:
+  #     - "${DB_PORT}:3306"
+  #   networks:
+  #     - product-network
 
   app:
     build:
