@@ -26,7 +26,7 @@ services:
     #   - product-database
     command: sh ./start.sh
     ports:
-      - "8000:80"
+      - "80:80"
     networks:
       - product-network
 
